@@ -1,0 +1,31 @@
+{
+  "name": "online-shopping-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type":"module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skkyal/Online-Shopping-Site.git"
+  },
+  "author": "Shlok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skkyal/Online-Shopping-Site/issues"
+  },
+  "homepage": "https://github.com/skkyal/Online-Shopping-Site#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "nodemon": "^2.0.12"
+  }
+}
