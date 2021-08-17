@@ -49,7 +49,7 @@ const RegisterScreen = ({ location, history }) => {
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="name"
-            placeHolder="Enter Name"
+            placeholder="Enter Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
@@ -59,7 +59,7 @@ const RegisterScreen = ({ location, history }) => {
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type="email"
-            placeHolder="Enter Email"
+            placeholder="Enter Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
@@ -69,7 +69,7 @@ const RegisterScreen = ({ location, history }) => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            placeHolder="Enter Password"
+            placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
@@ -79,7 +79,7 @@ const RegisterScreen = ({ location, history }) => {
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             type="password"
-            placeHolder="Confirm Password"
+            placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
