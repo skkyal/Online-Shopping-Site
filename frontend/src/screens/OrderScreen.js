@@ -15,7 +15,7 @@ const OrderScreen = ({ match }) => {
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
 
-  if (!loading) {
+  if (!loading && order) {
     const addDecimal = (num) => {
       return (Math.round(num * 100) / 100).toFixed(2);
     };
@@ -25,8 +25,10 @@ const OrderScreen = ({ match }) => {
   }
 
   useEffect(() => {
-    dispatch(getOrderDetails(orderId));
-  }, [dispatch, orderId]);
+    if (!order || order._id !== orderId) {
+      dispatch(getOrderDetails(orderId));
+    }
+  }, [dispatch, order, orderId]);
 
   return loading ? (
     <Loader />
