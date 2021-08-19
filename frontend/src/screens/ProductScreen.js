@@ -3,6 +3,7 @@ import Rating from "../components/Rating";
 import { listProductDetails } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import { PRODUCT_DETAILS_RESET } from "../constants/productConstants";
 
 import { Link } from "react-router-dom";
 import {
@@ -26,6 +27,11 @@ const ProductScreen = ({ history, match }) => {
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
+    return () => {
+      dispatch({
+        type: PRODUCT_DETAILS_RESET,
+      });
+    };
   }, [match, dispatch]);
 
   const addToCartHandler = () => {
