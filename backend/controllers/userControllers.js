@@ -4,7 +4,7 @@ import generateToken from "../utils/generateToken.js";
 import User from "../models/userModel.js";
 
 // @desc : Auth User & get Token
-// @route : /api/users/login
+// @route : POST /api/users/login
 // @access : Public
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -25,7 +25,7 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 // @desc : Register a New User
-// @route : /api/users
+// @route : POST /api/users
 // @access : Public
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
@@ -101,4 +101,12 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-export { authUser, registerUser, getUserProfile, updateUserProfile };
+// @desc : Get All Users
+// @route : GET /api/users
+// @access : Private/Admin
+const getUsers = asyncHandler(async (req, res) => {
+  const users = await User.find({});
+  res.json(users);
+});
+
+export { authUser, registerUser, getUserProfile, updateUserProfile, getUsers };
