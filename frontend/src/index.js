@@ -8,6 +8,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import axios from "axios";
+axios.defaults.baseURL = "https://shopcart-app.herokuapp.com";
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
